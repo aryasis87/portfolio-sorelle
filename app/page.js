@@ -1,5 +1,4 @@
 // app/page.jsx
-import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import RecentWork from '@/components/RecentWork'
 import Brands from '@/components/Brands'
@@ -12,7 +11,6 @@ import Message from '@/components/Message'
 export default function Home() {
   return (
     <main>
-      <Header />
       <Hero />
       <RecentWork />
       <Brands />
