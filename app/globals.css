@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-display: var(--font-syne), system-ui, sans-serif;
+}
+
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: -0.01em; }
+
+@keyframes blob { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(20px, -24px) scale(1.08); } }
+.animate-blob { animation: blob 12s ease-in-out infinite; }
+.animate-blob-slow { animation: blob 18s ease-in-out infinite reverse; }
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -24,3 +36,20 @@ body {
   color: var(--foreground);
   font-family: 'Inter', sans-serif;
 }
+
+/* ---- Dark theme (neutral remap; blue accent kept) ---- */
+.dark { color-scheme: dark; }
+.dark .bg-white { background-color: #0f1117 !important; }
+.dark .bg-gray-50 { background-color: #0b0d12 !important; }
+.dark .bg-gray-100 { background-color: #191c24 !important; }
+.dark .bg-blue-50 { background-color: rgba(37,99,235,0.12) !important; }
+.dark .bg-blue-100 { background-color: rgba(37,99,235,0.18) !important; }
+.dark .text-gray-900 { color: #f2f4f8 !important; }
+.dark .text-gray-800 { color: #e4e7ee !important; }
+.dark .text-gray-700 { color: #cdd2dc !important; }
+.dark .text-gray-600 { color: #aab1c0 !important; }
+.dark .text-gray-500 { color: #919aab !important; }
+.dark .text-gray-400 { color: #808a9b !important; }
+.dark .border-gray-100 { border-color: rgba(255,255,255,0.08) !important; }
+.dark .border-gray-200 { border-color: rgba(255,255,255,0.12) !important; }
+.dark .border-gray-300 { border-color: rgba(255,255,255,0.16) !important; }

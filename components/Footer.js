@@ -1,54 +1,49 @@
-// components/Footer.jsx
+// components/Footer.js
 import Link from 'next/link';
+import { profile, nav } from '@/lib/data';
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t">
-      <div className="container mx-auto px-4 py-12">
-        {/* Flex Container Utama */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Logo & Copyright */}
-          <div className="mb-6 md:mb-0">
-            <h3 className="text-xl font-bold text-gray-800">SanzyStore</h3>
-            <p className="text-sm text-gray-500 mt-2">
-              Copyright © 2025 Sanzystore all rights reserved.
-            </p>
+    <footer className="border-t border-gray-100 bg-white">
+      <div className="container mx-auto px-4 py-16">
+        {/* CTA */}
+        <div className="mb-14 flex flex-col items-start justify-between gap-6 rounded-3xl bg-gradient-to-r from-blue-600 to-indigo-600 p-8 text-white md:flex-row md:items-center md:p-10">
+          <div>
+            <h2 className="text-2xl font-bold leading-tight md:text-3xl">Have a project in mind?</h2>
+            <p className="mt-2 text-white/85">Let’s create something memorable together.</p>
           </div>
+          <Link href="/contact" className="shrink-0 rounded-full bg-white px-7 py-3 font-semibold text-blue-600 transition hover:bg-blue-50">
+            Start a project →
+          </Link>
+        </div>
 
-
-          {/* Media Sosial */}
-          <div className="flex space-x-4">
-            <a href="#" aria-label="Facebook" className="text-gray-600 hover:text-blue-600">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="Instagram" className="text-gray-600 hover:text-blue-600">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.645.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.743 0 8.333.014 7.053.06 2.051.292.292 2.052.06 7.053.014 8.333 0 8.743 0 12c0 3.257.014 3.667.06 4.947.232 5.001 2.009 6.759 6.947 6.99 1.28.046 1.69.06 4.947.06 3.257 0 3.667-.014 4.947-.06 4.997-.231 6.759-2.009 6.99-6.947.046-1.28.06-1.69.06-4.947 0-3.257-.014-3.668-.06-4.947-.232-4.998-2.009-6.759-6.947-6.99-1.281-.045-1.691-.06-4.947-.06zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.207-7.819a1 1 0 010 1.414l-2.207 2.207a1 1 0 11-1.414-1.414l2.207-2.207a1 1 0 011.414 0z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="Twitter" className="text-gray-600 hover:text-blue-600">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="LinkedIn" className="text-gray-600 hover:text-blue-600">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="Dribbble" className="text-gray-600 hover:text-blue-600">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c5.717 0 10.355 4.639 10.355 10.355 0 5.717-4.639 10.355-10.355 10.355C6.284 22.837 1.646 18.198 1.646 12.522c0-5.675 4.638-10.355 10.354-10.355zM12 0C5.381 0 0 5.381 0 12s5.381 12 12 12 12-5.381 12-12S18.619 0 12 0zm2.354 18.31c-3.858 0-6.986-3.128-6.986-6.986 0-3.859 3.128-6.987 6.986-6.987 3.858 0 6.986 3.128 6.986 6.987 0 3.858-3.128 6.986-6.986 6.986zm0-11.972c-2.757 0-4.986 2.23-4.986 4.986 0 2.757 2.23 4.986 4.986 4.986 2.757 0 4.986-2.23 4.986-4.986 0-2.756-2.229-4.986-4.986-4.986zm6.262 12.295c-1.247 0-2.26-.997-2.26-2.226 0-1.229.998-2.226 2.226-2.226.137 0 .274.013.411.039.248-.745.745-1.369 1.421-1.753-.115.013-.229.026-.344.026-2.455 0-4.446-1.991-4.446-4.446 0-2.455 1.991-4.446 4.446-4.446 2.455 0 4.446 1.991 4.446 4.446 0 1.51-.772 2.854-1.95 3.639.384.997.606 2.085.606 3.226 0 3.04-2.496 5.523-5.536 5.523z"/>
-              </svg>
-            </a>
-            <a href="#" aria-label="Behance" className="text-gray-600 hover:text-blue-600">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.25 16.5c-1.244 1.556-3.133 2.5-5.25 2.5-4.136 0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5c2.117 0 3.994.932 5.25 2.475L15 12h4.5v4.5h-4.5zm-9 0c-1.244 1.556-3.133 2.5-5.25 2.5-4.136 0-7.5-3.364-7.5-7.5s3.364-7.5 7.5-7.5c2.117 0 3.994.932 5.25 2.475L6 12H10.5v4.5H6z"/>
-              </svg>
-            </a>
+        {/* Columns */}
+        <div className="grid gap-10 md:grid-cols-3">
+          <div>
+            <h3 className="text-xl font-bold text-gray-900">Sorelle<span className="text-blue-600">.</span></h3>
+            <p className="mt-3 max-w-xs text-sm text-gray-500">{profile.role} based in {profile.location}.</p>
+            <a href={`mailto:${profile.email}`} className="mt-3 inline-block text-sm font-semibold text-blue-600 hover:underline">{profile.email}</a>
           </div>
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-gray-400">Navigation</p>
+            <ul className="mt-3 space-y-2">
+              {nav.map((l) => (
+                <li key={l.href}><Link href={l.href} className="text-sm text-gray-600 transition hover:text-blue-600">{l.label}</Link></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-wide text-gray-400">Find me on</p>
+            <ul className="mt-3 space-y-2">
+              {profile.socials.map((s) => (
+                <li key={s.label}><a href={s.href} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 transition hover:text-blue-600">{s.label}</a></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-12 border-t border-gray-100 pt-6 text-center text-sm text-gray-400">
+          © {new Date().getFullYear()} Sorelle · SanzyStore. All rights reserved.
         </div>
       </div>
     </footer>

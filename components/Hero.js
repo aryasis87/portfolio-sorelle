@@ -13,9 +13,9 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/5 backdrop-blur-sm z-0" />
 
       {/* 🎨 Abstract Shapes */}
-      <div className="absolute top-10 left-[-50px] w-[300px] h-[300px] bg-blue-200 opacity-30 rounded-full blur-3xl z-0" />
-      <div className="absolute bottom-[-80px] right-[-60px] w-[240px] h-[240px] bg-purple-200 opacity-30 rounded-full blur-2xl z-0" />
-      <div className="absolute top-[40%] left-[60%] w-[180px] h-[180px] bg-pink-200 opacity-20 rounded-full blur-2xl z-0 transform -translate-x-1/2 -translate-y-1/2" />
+      <div className="animate-blob absolute top-10 left-[-50px] w-[300px] h-[300px] bg-blue-200 opacity-30 rounded-full blur-3xl z-0" />
+      <div className="animate-blob-slow absolute bottom-[-80px] right-[-60px] w-[240px] h-[240px] bg-purple-200 opacity-30 rounded-full blur-2xl z-0" />
+      <div className="animate-blob absolute top-[40%] left-[60%] w-[180px] h-[180px] bg-pink-200 opacity-20 rounded-full blur-2xl z-0 transform -translate-x-1/2 -translate-y-1/2 [animation-delay:3s]" />
 
       {/* 🔥 Main Content */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12">
@@ -38,7 +38,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6">
             <motion.a
               whileHover={{ scale: 1.05 }}
-              href="#contact"
+              href="/contact"
               className="inline-flex items-center justify-center px-6 py-3 text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition"
             >
               <Rocket className="w-5 h-5 mr-2" />
