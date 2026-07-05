@@ -35,7 +35,7 @@ export default function WorkPage() {
               {list.map((p) => (
                 <motion.a
                   key={p.title}
-                  href="#"
+                  href="/contact"
                   layout
                   initial={{ opacity: 0, scale: 0.96 }}
                   animate={{ opacity: 1, scale: 1 }}

@@ -14,7 +14,7 @@ export default function BlogPage() {
         <div className="container mx-auto grid gap-5 px-4">
           {posts.map((p, i) => (
             <Reveal key={p.title} delay={(i % 3) * 0.08}>
-              <a href="#" className="group flex flex-col justify-between gap-4 rounded-2xl bg-gray-50 p-6 transition hover:bg-blue-50 sm:flex-row sm:items-center md:p-8">
+              <a href="/contact" className="group flex flex-col justify-between gap-4 rounded-2xl bg-gray-50 p-6 transition hover:bg-blue-50 sm:flex-row sm:items-center md:p-8">
                 <div className="max-w-2xl">
                   <div className="mb-2 flex items-center gap-3 text-xs text-gray-500">
                     <span className="rounded-full bg-blue-100 px-2.5 py-1 font-medium text-blue-700">{p.category}</span>
