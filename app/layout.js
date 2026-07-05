@@ -9,9 +9,38 @@ import ThemeToggle from "@/components/ThemeToggle";
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const syne = Syne({ variable: "--font-syne", subsets: ["latin"], weight: ["600", "700", "800"] });
 
+const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Sorelle","jobTitle":"UI/UX Designer & Developer","url":"https://portfolio-sorelle.vercel.app","inLanguage":"en"}};
+
 export const metadata = {
+  metadataBase: new URL("https://portfolio-sorelle.vercel.app"),
   title: "Sorelle — UI/UX Designer & Developer",
-  description: "Portfolio of Sorelle, a UI/UX designer & developer crafting memorable digital experiences.",
+  description: "Portfolio of Sorelle, a UI/UX designer & developer crafting memorable, elegant digital experiences.",
+  applicationName: "Sorelle",
+  keywords: ["UI/UX designer", "developer", "portfolio", "digital experience", "interface design"],
+  authors: [{ name: "Sorelle" }],
+  creator: "Sorelle",
+  publisher: "Sorelle",
+  alternates: { canonical: "https://portfolio-sorelle.vercel.app" },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://portfolio-sorelle.vercel.app",
+    siteName: "Sorelle",
+    title: "Sorelle — UI/UX Designer & Developer",
+    description: "Portfolio of Sorelle, a UI/UX designer & developer crafting memorable, elegant digital experiences.",
+    images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Sorelle — UI/UX Designer & Developer" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sorelle — UI/UX Designer & Developer",
+    description: "Portfolio of Sorelle, a UI/UX designer & developer crafting memorable, elegant digital experiences.",
+    images: ["/og.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -25,7 +54,8 @@ export default function RootLayout({ children }) {
           <Message />
           <ThemeToggle />
         </ThemeProvider>
-      </body>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(__jsonld) }} />
+        </body>
     </html>
   );
 }
