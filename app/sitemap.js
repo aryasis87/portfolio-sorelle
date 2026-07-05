@@ -1,5 +1,5 @@
 export default function sitemap() {
   return [
-    { url: "https://portfolio-sorelle.vercel.app", lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
+    { url: "https://sorelle.pintuweb.com", lastModified: new Date(), changeFrequency: "monthly", priority: 1 },
   ];
 }

@@ -9,10 +9,10 @@ import ThemeToggle from "@/components/ThemeToggle";
 const inter = Inter({ variable: "--font-inter", subsets: ["latin"] });
 const syne = Syne({ variable: "--font-syne", subsets: ["latin"], weight: ["600", "700", "800"] });
 
-const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Sorelle","jobTitle":"UI/UX Designer & Developer","url":"https://portfolio-sorelle.vercel.app","inLanguage":"en"}};
+const __jsonld = {"@context":"https://schema.org","@type":"ProfilePage","mainEntity":{"@type":"Person","name":"Sorelle","jobTitle":"UI/UX Designer & Developer","url":"https://sorelle.pintuweb.com","inLanguage":"en"}};
 
 export const metadata = {
-  metadataBase: new URL("https://portfolio-sorelle.vercel.app"),
+  metadataBase: new URL("https://sorelle.pintuweb.com"),
   title: "Sorelle — UI/UX Designer & Developer",
   description: "Portfolio of Sorelle, a UI/UX designer & developer crafting memorable, elegant digital experiences.",
   applicationName: "Sorelle",
@@ -20,11 +20,11 @@ export const metadata = {
   authors: [{ name: "Sorelle" }],
   creator: "Sorelle",
   publisher: "Sorelle",
-  alternates: { canonical: "https://portfolio-sorelle.vercel.app" },
+  alternates: { canonical: "https://sorelle.pintuweb.com" },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://portfolio-sorelle.vercel.app",
+    url: "https://sorelle.pintuweb.com",
     siteName: "Sorelle",
     title: "Sorelle — UI/UX Designer & Developer",
     description: "Portfolio of Sorelle, a UI/UX designer & developer crafting memorable, elegant digital experiences.",
