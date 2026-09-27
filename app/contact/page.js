@@ -12,7 +12,7 @@ export default function ContactPage() {
   const submit = (e) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.message.trim()) return;
-    setSent(true); // TODO: hubungkan ke backend/email
+    setSent(true); // Portfolio template: the message is not delivered anywhere.
   };
 
   const field = 'w-full rounded-xl border border-gray-300 bg-white px-4 py-3 text-sm text-gray-900 outline-none transition focus:border-blue-500 focus:ring-2 focus:ring-blue-100';
@@ -46,9 +46,9 @@ export default function ContactPage() {
             {sent ? (
               <div className="rounded-3xl border border-gray-200 bg-gray-50 p-10 text-center">
                 <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-blue-600 text-white"><Check size={28} /></div>
-                <h2 className="mt-4 text-2xl font-bold text-gray-900">Message sent!</h2>
-                <p className="mt-1 text-gray-600">Thanks, {form.name}. I’ll reply to {form.email} soon.</p>
-                <button onClick={() => { setSent(false); setForm({ name: '', email: '', message: '' }); }} className="mt-6 rounded-full border border-blue-600 px-6 py-2.5 text-sm font-semibold text-blue-600 transition hover:bg-blue-600 hover:text-white">Send another</button>
+                <h2 className="mt-4 text-2xl font-bold text-gray-900">Thanks for trying the form!</h2>
+                <p className="mt-1 text-gray-600">This is a portfolio template, {form.name}, so your message wasn’t actually sent. In a live version, it lands straight in the owner’s inbox.</p>
+                <button onClick={() => { setSent(false); setForm({ name: '', email: '', message: '' }); }} className="mt-6 rounded-full border border-blue-600 px-6 py-2.5 text-sm font-semibold text-blue-600 transition hover:bg-blue-600 hover:text-white">Back to the form</button>
               </div>
             ) : (
               <form onSubmit={submit} className="space-y-4 rounded-3xl border border-gray-200 bg-gray-50 p-6 md:p-8">
