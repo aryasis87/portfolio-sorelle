@@ -20,12 +20,12 @@ export default function Footer() {
         {/* Columns */}
         <div className="grid gap-10 md:grid-cols-3">
           <div>
-            <h3 className="text-xl font-bold text-gray-900">Sorelle<span className="text-blue-600">.</span></h3>
-            <p className="mt-3 max-w-xs text-sm text-gray-500">{profile.role} based in {profile.location}.</p>
+            <p className="text-xl font-bold text-gray-900">{profile.name}<span className="text-blue-600">.</span></p>
+            <p className="mt-3 max-w-xs text-sm text-gray-600">{profile.role} based in {profile.location}.</p>
             <a href={`mailto:${profile.email}`} className="mt-3 inline-block text-sm font-semibold text-blue-600 hover:underline">{profile.email}</a>
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-gray-400">Navigation</p>
+            <p className="text-sm font-semibold uppercase tracking-wide text-gray-500">Navigation</p>
             <ul className="mt-3 space-y-2">
               {nav.map((l) => (
                 <li key={l.href}><Link href={l.href} className="text-sm text-gray-600 transition hover:text-blue-600">{l.label}</Link></li>
@@ -33,17 +33,13 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <p className="text-sm font-semibold uppercase tracking-wide text-gray-400">Find me on</p>
-            <ul className="mt-3 space-y-2">
-              {profile.socials.map((s) => (
-                <li key={s.label}><a href={s.href} target="_blank" rel="noopener noreferrer" className="text-sm text-gray-600 transition hover:text-blue-600">{s.label}</a></li>
-              ))}
-            </ul>
+            <p className="text-sm font-semibold uppercase tracking-wide text-gray-500">About this site</p>
+            <p className="mt-3 max-w-xs text-sm text-gray-600">A portfolio template with a fictional persona. Every project links to a live demo site; there are no real clients or testimonials here.</p>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-gray-100 pt-6 text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} Sorelle · SanzyStore. All rights reserved.
+        <div className="mt-12 border-t border-gray-100 pt-6 text-center text-sm text-gray-500">
+          © {new Date().getFullYear()} {profile.name}. All rights reserved.
         </div>
       </div>
     </footer>

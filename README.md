@@ -1,31 +1,51 @@
 # Sorelle — UI/UX Designer & Developer
 
-Portfolio of Sorelle, a UI/UX designer & developer crafting memorable, elegant digital experiences.
+Portfolio template for Sorelle, a fictional UI/UX designer and developer: bright case studies that link to six live demo sites for families, learners, and makers, plus notes on honest copy, games that stop, and drawings made to measure.
 
 **Demo live:** https://portfolio-sorelle.vercel.app
 
-![Tangkapan layar Sorelle](public/og.jpg)
+![Tangkapan layar](public/og.jpg)
 
-> Template portfolio dengan persona fiktif. Formulir kontak hanya demo.
+> Template portfolio dengan persona fiktif. Semua proyek di dalamnya adalah demo live dari koleksi yang sama; tidak ada klien, testimoni, atau logo merek sungguhan. Formulir kontak hanya demo dan mengatakannya.
 
 ## Konsep
 
-Persona Sorelle, UI/UX designer dan developer. Terang dengan aksen biru, blob pastel beranimasi, dan judul Syne.
+Persona fiktif Sorelle, desainer UI/UX. Bersih dan terang dengan angka bernomor besar, ubin karya, dan aksen hangat; mode gelap membalik kertas jadi arang.
 
-Multi-halaman (Home, About, Work, Blog, Contact) dengan mode gelap/terang lewat next-themes.
+## Isi
+
+- **6 studi kasus** (`/work/[slug]`): tantangan, yang dikerjakan, hasil, dan tautan ke situs live-nya.
+- **3 artikel** (`/blog/[slug]`) tentang keputusan desain di proyek-proyek tersebut.
+- Angka yang tampil (jumlah proyek, layanan, artikel) dihitung dari isi situs; lama berkarya adalah bagian dari persona fiktif. Tidak ada klaim jumlah klien atau tingkat kepuasan.
+- Halaman 404 bergaya sendiri, judul halaman berpola `Halaman — Sorelle`, dan sitemap memuat setiap studi kasus dan artikel.
+
+| Studi kasus | Demo live |
+| --- | --- |
+| Beranda | https://properti-beranda.vercel.app |
+| EduPlay | https://landing-eduplay.vercel.app |
+| Woodora | https://landing-woodora.vercel.app |
+| Elevinar | https://landing-elevinar.vercel.app |
+| NextTalks | https://landing-nexttalks.vercel.app |
+| Kayla’s birthday | https://undangan-birthday.vercel.app |
 
 ## Halaman
 
-`/` · `/about` · `/blog` · `/contact` · `/work`
+`/` · `/about` · `/work` · `/work/[slug]` · `/blog` · `/blog/[slug]` · `/contact`
+
+## Gambar & kredit
+
+- `public/images/work/*.webp` — tangkapan layar demo live di tabel atas (karya koleksi ini sendiri).
+- `public/images/hero.webp` — "Office Work" oleh Negative Space, [StockSnap](https://stocksnap.io/photo/office-work-8P6GFHP0LU), lisensi CC0.
+- `public/images/about.webp` — "Office Work" oleh kontributor StockSnap (nama tidak dicantumkan di Openverse), [StockSnap](https://stocksnap.io/photo/office-work-PE894KZLRX), lisensi CC0.
 
 ## Teknologi
 
 - Next.js 15.5 (App Router) dan React 19
 - Tailwind CSS v4
 - JavaScript
-- Heroicons, Framer Motion, Lucide (ikon), next-themes (mode gelap)
+- Framer Motion, Lucide (ikon), next-themes (mode gelap/terang)
 - Font: Inter, Syne (next/font)
-- SEO: metadata per halaman, Open Graph, JSON-LD, sitemap.xml, dan robots.txt
+- SEO: metadata per halaman, Open Graph, JSON-LD (WebSite), sitemap.xml, dan robots.txt
 
 ## Menjalankan secara lokal
 
@@ -38,4 +58,4 @@ Buka http://localhost:3000. Untuk build produksi: `npm run build` lalu `npm star
 
 ---
 
-Bagian dari koleksi 7 template portfolio personal di [PortalPorto](https://portal-porto-neon.vercel.app). Dibuat oleh [PintuWeb](https://pintuweb.com), jasa pembuatan website.
+Bagian dari koleksi 7 template portfolio personal di [PortalPorto](https://portal-porto-neon.vercel.app). Dibuat oleh [PintuWeb](https://www.pintuweb.com), jasa pembuatan website.

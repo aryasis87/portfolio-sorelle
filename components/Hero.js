@@ -1,25 +1,27 @@
 'use client';
 import Image from 'next/image';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Rocket } from 'lucide-react';
+import { profile, projects } from '@/lib/data';
 
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative bg-gradient-to-b from-gray-50 to-white py-24 sm:py-32 overflow-hidden"
+      className="relative bg-gradient-to-b from-gray-50 to-white pt-32 pb-24 sm:pb-32 overflow-hidden"
     >
-      {/* 🔲 Overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-black/5 backdrop-blur-sm z-0" />
 
-      {/* 🎨 Abstract Shapes */}
+      {/* Bentuk abstrak */}
       <div className="animate-blob absolute top-10 left-[-50px] w-[300px] h-[300px] bg-blue-200 opacity-30 rounded-full blur-3xl z-0" />
       <div className="animate-blob-slow absolute bottom-[-80px] right-[-60px] w-[240px] h-[240px] bg-purple-200 opacity-30 rounded-full blur-2xl z-0" />
       <div className="animate-blob absolute top-[40%] left-[60%] w-[180px] h-[180px] bg-pink-200 opacity-20 rounded-full blur-2xl z-0 transform -translate-x-1/2 -translate-y-1/2 [animation-delay:3s]" />
 
-      {/* 🔥 Main Content */}
+      {/* Konten utama */}
       <div className="relative z-10 container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12">
-        {/* ⬅️ Left: Text */}
+        {/* Kiri: teks */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -28,42 +30,34 @@ export default function Hero() {
           className="w-full md:w-1/2 text-center md:text-left"
         >
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-            Solving <span className="text-blue-600">modern</span> problems through design.
+            Warm websites that tell the <span className="text-blue-600">whole</span> story.
           </h1>
-          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto md:mx-0">
-            I push the limits of creativity to craft user-friendly and memorable digital experiences.
-          </p>
+          <p className="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto md:mx-0">{profile.bioShort}</p>
 
-          {/* 🚀 CTA + Avatars */}
+          {/* CTA + tumpukan proyek */}
           <div className="flex flex-col sm:flex-row items-center sm:items-start gap-5 sm:gap-6">
-            <motion.a
-              whileHover={{ scale: 1.05 }}
+            <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-6 py-3 text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 transition"
+              className="inline-flex items-center justify-center px-6 py-3 text-lg font-medium text-white bg-blue-600 rounded-full hover:bg-blue-700 hover:scale-105 transition"
             >
-              <Rocket className="w-5 h-5 mr-2" />
-              Hire Me
-            </motion.a>
+              <Rocket className="w-5 h-5 mr-2" aria-hidden="true" />
+              Start a project
+            </Link>
 
-            <div className="flex items-center gap-3">
-              <div className="flex -space-x-3">
-                {['pp1.png', 'pp2.png', 'pp3.png', 'pp4.png'].map((src, i) => (
-                  <Image
-                    key={i}
-                    src={`/images/${src}`}
-                    alt={`Client ${i + 1}`}
-                    width={40}
-                    height={40}
-                    className="object-cover rounded-full border-2 border-white shadow-sm"
-                  />
+            <Link href="/work" className="group flex items-center gap-3">
+              <span className="flex -space-x-3" aria-hidden="true">
+                {projects.slice(0, 4).map((p) => (
+                  <span key={p.slug} className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-white bg-gray-100 shadow-sm">
+                    <Image src={p.image} alt="" fill sizes="40px" className="object-cover object-top" />
+                  </span>
                 ))}
-              </div>
-              <span className="text-sm text-gray-500">+10K Worldwide Clients</span>
-            </div>
+              </span>
+              <span className="text-sm text-gray-600 group-hover:text-blue-600">{projects.length} live projects to open</span>
+            </Link>
           </div>
         </motion.div>
 
-        {/* ➡️ Right: Image */}
+        {/* Kanan: foto */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
@@ -72,10 +66,12 @@ export default function Hero() {
           className="w-full md:w-1/2 flex justify-center md:justify-end"
         >
           <Image
-            src="/images/profile1.jpg"
-            alt="Hero Image"
+            src={profile.avatar}
+            alt=""
             width={560}
-            height={560}
+            height={700}
+            priority
+            sizes="(max-width: 768px) 90vw, 512px"
             className="rounded-2xl shadow-2xl object-cover w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg transform hover:scale-105 transition duration-500"
           />
         </motion.div>
